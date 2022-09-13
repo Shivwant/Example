@@ -19,12 +19,30 @@ function insert()
     dbo.collection("products").insertOne(a);
 }
 
-insert();
+//insert(); 
+
 
 function delet()
 {
     let dbo=client.db("CHECK")
-    dbo.collection("products").deleteOne({"name":"AirCondtioner"});
+    dbo.collection("products").deleteOne({'price':18000});
 }
 
 //delet();
+
+function replace()
+{
+    let dbo=client.db('CHECK')
+    dbo.collection('products').replaceOne({'price':21000},{"name":"TV","price":21000,"decscription":"new","condition":"superb"});
+
+}
+//replace();
+
+function update()
+{
+    let dbo=client.db('CHECK')
+    dbo.collection('produts').updateOne({name:'Smart Watch'},{$set : {price:1800}});
+    console.log("done");
+}
+
+update();
