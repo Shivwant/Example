@@ -11,7 +11,7 @@ function display()
    })
 }
 
-//display();
+display();
 a=({"name":"TV","price":18000,"decscription":"new","condition":"superb"});
 function insert()
 {
@@ -41,8 +41,8 @@ function replace()
 function update()
 {
     let dbo=client.db('CHECK')
-    dbo.collection('produts').updateOne({name:'Smart Watch'},{$set : {price:1800}});
+    dbo.collection('products').updateOne({name:'Smart Watch'},{$set : {price:1800}});
     console.log("done");
 }
 
-update();
+//update();
